@@ -9,8 +9,9 @@ entity led_input_display is
 end led_input_display;
 
 architecture logic of led_input_display is
+    
     begin
-        -- LEDR switches on when switch is turned on
+    -- LEDR switches on when switch is turned on
 	LED_LIGHTS(0) <= INPUTS(0);
 	LED_LIGHTS(1) <= INPUTS(1);
 	LED_LIGHTS(2) <= INPUTS(2);
