@@ -18,7 +18,7 @@ A Structure of the design is
 
     .
     ├── ...
-    ├── Digital_Clock.vhdl            # Top Level Entity
+    ├── Digital_Clock.vhdl       # Top Level Entity
     │   ├── Count2.vhdl          # HR1 - Counts from 0-2 
     │   ├── Count3.vhdl          # HR0 - Counts from 0-9 when HR1 is 0 or 1 and 0-3 when HR is 2 
     │   ├── Count5.vhdl          # MIN1 - Counts from 0-9 
