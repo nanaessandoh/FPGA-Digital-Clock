@@ -1,7 +1,9 @@
 # FPGA Design and Implementation of a Digital Clock
 
 The design is prototype on the DE1-SoC board and is driven by the 50 MHz clock signal. 
+
 That clock displays hours, minutes, and seconds on the seven-segment displays.
+
 ..* Hours will be displayed on HEX5 and HEX4.
 ..* Minutes will be displayed on HEX3 and HEX2.
 ..* Seconds will be displayed on HEX1 and HEX0.
