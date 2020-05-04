@@ -16,7 +16,7 @@ entity Count5s is
 );
 end Count5s;
 
-architecture rtl of Count5s is
+architecture behav of Count5s is
   signal cnt: std_logic_vector(3 downto 0) := "0000";
 begin
 
@@ -50,4 +50,4 @@ if (clk'event) and (clk = '1') then
     end if;
   end process;
   
-end rtl;
+end behav;

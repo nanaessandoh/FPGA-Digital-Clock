@@ -16,7 +16,7 @@ entity Count9S is
 );
 end Count9S;
 
-architecture rtl of Count9S is
+architecture behav of Count9S is
   signal cnt: std_logic_vector(3 downto 0) := "0000";
 begin
 
@@ -52,4 +52,4 @@ if (clk'event) and (clk = '1') then
     end if;
   end process;
   
-end rtl;
+end behav;

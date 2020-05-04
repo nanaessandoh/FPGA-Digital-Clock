@@ -1,6 +1,7 @@
 -- Counter based on 50 MHz clock that outputs control signals 
--- at 10, with asynchronous reset and
+-- with asynchronous reset and
 -- a synchronous clear.
+-- Counts from 0-9 when HR1 is 0 or 1 and 0-3 when HR1 is 2
 
 library ieee;
 use ieee.std_logic_1164.all;
@@ -9,14 +10,14 @@ use ieee.numeric_std.all;
 
 entity Count3 is
   port( clk, rstb: in std_logic; 
-  	en, KEY,cnt2: in std_logic;
+  	en, KEY,cnt2: in std_logic; -- cnt2 indicates HR1 is 2 so the max value for HR0 is 3 ie. 23:00:00 and not 9 ie. 29:00:00
 	SW1,SW2 : in std_logic_vector(3 downto 0);
         cnt10,hex5reset: out std_logic;
         Count : out std_logic_vector(3 downto 0) := "0000"
 );
 end Count3;
 
-architecture rtl of Count3 is
+architecture behav of Count3 is
   signal cnt: std_logic_vector(3 downto 0) := "0000";
   signal H5reset, hold10: std_logic := '0';	
 begin
@@ -67,4 +68,4 @@ begin
   hex5reset <= H5reset;
   	
  
-end rtl;
+end behav;

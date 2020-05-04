@@ -5,7 +5,7 @@ entity test_clock is
 
 end test_clock;
 
-architecture logic of test_clock is
+architecture behav of test_clock is
 
 component digital_clock is
 	port(
@@ -42,4 +42,4 @@ end component;
 	-- Generate Clock to Stack the System
 	 CLK_i <= not CLK_i after 1000000000 ns;
 
-    end logic;
+    end behav;

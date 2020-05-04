@@ -1,5 +1,6 @@
 -- Counter based on 50 MHz clock that outputs control signals 
--- at 2, with synchronous reset and
+-- Counts from 0-2
+-- at 2, it sends a signal to HR0 that it can have a maximum value of 3 ie. 23:00:00 we can go to 24:00:00
 -- a synchronous clear.
 
 library ieee;
@@ -8,15 +9,15 @@ use ieee.std_logic_unsigned.all;
 use ieee.numeric_std.all;
 
 entity Count2 is
-  port( clk, rstb,clr :in std_logic;
+port( clk, rstb,clr :in std_logic;
   	en, KEY: in std_logic;
   	SW1,SW2 : in std_logic_vector(3 downto 0);
   	cnt2: out std_logic; -- indicates that 2 is showing on the HEX5
-        Count : out std_logic_vector(3 downto 0) := "0000"
+    Count : out std_logic_vector(3 downto 0) := "0000"
 );
 end Count2;
 
-architecture rtl of Count2 is
+architecture behav of Count2 is
   signal cnt: std_logic_vector(3 downto 0) := "0000";
   signal hold2: std_logic := '0';
 begin
@@ -28,9 +29,9 @@ begin
   if (clk'event) and (clk = '1') then
 
     if (rstb = '0') then -- synchronous active low reset
-      cnt <= "0000";
+    cnt <= "0000";
 		hold2 <= '0';
-	 elsif (KEY = '0') then	
+	 elsif (KEY = '0') then -- KEY can be used to set the HR1 to 0,1,2	
 		hold2 <= '0';
 		if (SW1 > "0010" and SW2 >"0011") then
 			cnt <= "0010";
@@ -56,7 +57,7 @@ begin
         end if;     
       end if;
   end process;
- cnt2<=hold2;
+ cnt2 <= hold2;
  Count <= cnt;  
   
-end rtl;
+end behav;

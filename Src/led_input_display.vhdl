@@ -1,3 +1,5 @@
+
+-- Ensures that an LED is switched on when a particular switch is toggled 
 library ieee;
 use ieee.std_logic_1164.all;
 
@@ -8,7 +10,7 @@ entity led_input_display is
     );
 end led_input_display;
 
-architecture logic of led_input_display is
+architecture behav of led_input_display is
     
     begin
     -- LEDR switches on when switch is turned on
@@ -16,4 +18,4 @@ architecture logic of led_input_display is
 	LED_LIGHTS(1) <= INPUTS(1);
 	LED_LIGHTS(2) <= INPUTS(2);
 	LED_LIGHTS(3) <= INPUTS(3);
-    end logic;
+    end behav;

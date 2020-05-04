@@ -1,4 +1,4 @@
--- Counter based on 50 MHz clock that outputs control signals 
+-- Counter based on 50 MHz clock that outputs control signal representinf 1 second
 -- at 50M, with asynchronous reset and
 -- a synchronous clear.
 
