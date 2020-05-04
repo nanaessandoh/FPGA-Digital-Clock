@@ -15,15 +15,13 @@ The specifications of the design are
 *  KEY(3) will asynchronously set the minutes to the time currently set on switches SW(7 downto 0) and reset the seconds to zero.
 
 A Structure of the design is  layout
-
     .
-    ├── ...
     ├── Digital Clock            # Top Level Entity
-    │   ├── Count2.vhdl          # HR1 - Counts from 0-2 
-    │   ├── Count3.vhdl          # HR0 - Counts from 0-9 when HR1 is 0 or 1 and 0-3 when HR is 2 
-    │   ├── Count5.vhdl          # MIN1 - Counts from 0-9 
-    │   ├── Count9.vhdl          # MIN0 - Counts from 0-9 
-    │   ├── Count5S.vhdl         # SEC1 - Counts from 0-9 
-    │   ├── Count9S.vhdl         # SEC0 - Counts from 0-9 
-    │   └── Count1S              # Generates a control signal every 1 second
-    └── ...
+        ├── Count2.vhdl          # HR1 - Counts from 0-2 
+        ├── Count3.vhdl          # HR0 - Counts from 0-9 when HR1 is 0 or 1 and 0-3 when HR is 2 
+        ├── Count5.vhdl          # MIN1 - Counts from 0-9 
+        ├── Count9.vhdl          # MIN0 - Counts from 0-9 
+        ├── Count5S.vhdl         # SEC1 - Counts from 0-9 
+        ├── Count9S.vhdl         # SEC0 - Counts from 0-9 
+        └── Count1S              # Generates a control signal every 1 second
+    
