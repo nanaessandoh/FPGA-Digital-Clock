@@ -41,6 +41,6 @@ end component;
 									);
 									
 	-- Generate Clock to Stack the System
-	 CLK_i <= not CLK_i after 1000000000 ns;
+	 CLK_i <= not CLK_i after 10 ns;
 
     end behav;
