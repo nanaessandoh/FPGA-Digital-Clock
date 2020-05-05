@@ -27,17 +27,17 @@ end component;
 
 	begin
 		
-	 test: digital_clock port map(	 SW 	=> SW_i,
-									 KEY 	=> KEY_i,
-									 CLK	=> CLK_i,
-									 LEDR	=> LEDR_i,
-									 HEX5	=> HEX5_i,
-									 HEX4	=> HEX4_i, 
-									 HEX3	=> HEX3_i, 
-									 HEX2	=> HEX2_i, 
-									 HEX1	=> HEX1_i, 
-									 HEX0	=> HEX0_i 
-									 );
+	 test: digital_clock port map(	SW 	=> SW_i,
+	 								KEY 	=> KEY_i,
+									CLK	=> CLK_i,
+									LEDR	=> LEDR_i,
+									HEX5	=> HEX5_i,
+									HEX4	=> HEX4_i, 
+									HEX3	=> HEX3_i, 
+									HEX2	=> HEX2_i, 
+									HEX1	=> HEX1_i, 
+									HEX0	=> HEX0_i 
+									);
 									
 	-- Generate Clock to Stack the System
 	 CLK_i <= not CLK_i after 1000000000 ns;
