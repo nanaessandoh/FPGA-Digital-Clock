@@ -27,7 +27,8 @@ end component;
 
 	begin
 		
-	 test: digital_clock port map(	SW 	=> SW_i,
+	 test: digital_clock port map(	
+		 							SW 	=> SW_i,
 	 								KEY 	=> KEY_i,
 									CLK	=> CLK_i,
 									LEDR	=> LEDR_i,
