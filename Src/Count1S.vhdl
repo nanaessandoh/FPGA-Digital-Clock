@@ -22,7 +22,7 @@ begin
     if (clk'event) and (clk = '1') then
       if (rstb = '0') then -- synchronous active low reset
         cnt <= "00000000000000000000000000";
-      elsif (en = '1') then
+      elsif (en = '1') then 
         if (cnt = "10111110101111000010000000") then -- Uncomment for FPGA board simulations
       --  if (cnt = "00000000000000000000000010") then -- Uncomment this line for testbench
           cnt50M <= '1';
