@@ -1,6 +1,6 @@
 # FPGA Design and Implementation of a Digital Clock
 
-The design is prototype on the DE1-SoC board and is driven by the 50 MHz clock signal. 
+The design is prototyped on the DE1-SoC board and is driven by the 50 MHz clock signal. 
 
 The clock displays hours, minutes, and seconds on the seven-segment displays.
 
