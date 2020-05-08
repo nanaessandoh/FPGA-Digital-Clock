@@ -7,7 +7,7 @@ entity digital_clock is
 	port(
 		SW : in std_logic_vector(7 downto 0);
 		KEY : in std_logic_vector(3 downto 0);
-		CLK: in std_logic; --Clock Signal
+		CLOCK_50: in std_logic; --Clock Signal
 		LEDR : out std_logic_vector(7 downto 0);
 		HEX5, HEX4, HEX3, HEX2, HEX1, HEX0 : out std_logic_vector(6 downto 0)
 	);
@@ -25,7 +25,7 @@ architecture behav of digital_clock is
 	end component;
 
 	-- 1 Second Counter
-	component Count1
+	component Count1S
   	port( clk, rstb, en: in std_logic;
         cnt50M: out std_logic);
 	end component;
@@ -109,13 +109,13 @@ architecture behav of digital_clock is
 
 
 		-- Port Map Declarations
-		Second_Generator : Count1 port map (CLK, KEY(0),'1', Primary1sec);
-		Second_HEX0 :  Count9s port map (CLK, KEY(0),SecReset3, Primary1sec,'1',"0000", "0000", Sec_0_EN, SEC_0);
-		Second_HEX1 :  Count5s port map (CLK, KEY(0),SecReset3, Sec_0_EN,'1',"0000", "0000",Sec_1_EN, SEC_1);
-		Minute_HEX2 :  Count9 port map (CLK, KEY(0), Sec_1_EN, KEY(3), SW(7 downto 4), SW(3 downto 0), Min_0_EN, MIN_0);
-		Minute_HEX3 :  Count5 port map (CLK, KEY(0), Min_0_EN, KEY(3), SW(7 downto 4), SW(3 downto 0), Min_1_EN, MIN_1);
-		Hour_HEX4 :  Count3 port map (CLK, KEY(0), Min_1_EN, KEY(2), Hrs_1_2,SW(7 downto 4), SW(3 downto 0), Hrs_0_EN, H5reset, HRS_0);
-		Hour_HEX5 :  Count2 port map (CLK, KEY(0), H5reset, Hrs_0_EN, KEY(2), SW(7 downto 4),SW(3 downto 0), Hrs_1_2, HRS_1);
+		Second_Generator : Count1S port map (CLOCK_50, KEY(0),'1', Primary1sec);
+		Second_HEX0 :  Count9s port map (CLOCK_50, KEY(0),SecReset3, Primary1sec,'1',"0000", "0000", Sec_0_EN, SEC_0);
+		Second_HEX1 :  Count5s port map (CLOCK_50, KEY(0),SecReset3, Sec_0_EN,'1',"0000", "0000",Sec_1_EN, SEC_1);
+		Minute_HEX2 :  Count9 port map (CLOCK_50, KEY(0), Sec_1_EN, KEY(3), SW(7 downto 4), SW(3 downto 0), Min_0_EN, MIN_0);
+		Minute_HEX3 :  Count5 port map (CLOCK_50, KEY(0), Min_0_EN, KEY(3), SW(7 downto 4), SW(3 downto 0), Min_1_EN, MIN_1);
+		Hour_HEX4 :  Count3 port map (CLOCK_50, KEY(0), Min_1_EN, KEY(2), Hrs_1_2,SW(7 downto 4), SW(3 downto 0), Hrs_0_EN, H5reset, HRS_0);
+		Hour_HEX5 :  Count2 port map (CLOCK_50, KEY(0), H5reset, Hrs_0_EN, KEY(2), SW(7 downto 4),SW(3 downto 0), Hrs_1_2, HRS_1);
 
 		LEDs_1 : led_input_display port map (SW(7 downto 4), LEDR(7 downto 4));
 		LEDs_0 : led_input_display port map (SW(3 downto 0), LEDR(3 downto 0));

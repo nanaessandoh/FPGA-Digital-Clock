@@ -7,12 +7,12 @@ use ieee.std_logic_1164.all;
 use ieee.std_logic_unsigned.all;
 use ieee.numeric_std.all;
 
-entity Count1 is
+entity Count1S is
   port( clk, rstb, en: in std_logic;
         cnt50M: out std_logic);
-end Count1;
+end Count1S;
 
-architecture behav of Count1 is
+architecture behav of Count1S is
   signal cnt: std_logic_vector(25 downto 0) := "00000000000000000000000000";
 begin
 
