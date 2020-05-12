@@ -18,12 +18,14 @@ A Structure of the design is
 
     .
     ├── ...
-    ├── Digital_Clock.vhdl       # Top Level Entity
-    │   ├── Count2.vhdl          # HR1 - Counts from 0-2 
-    │   ├── Count3.vhdl          # HR0 - Counts from 0-9 when HR1 is 0 or 1 and 0-3 when HR is 2 
-    │   ├── Count5.vhdl          # MIN1 - Counts from 0-5 
-    │   ├── Count9.vhdl          # MIN0 - Counts from 0-9 
-    │   ├── Count5S.vhdl         # SEC1 - Counts from 0-5 
-    │   ├── Count9S.vhdl         # SEC0 - Counts from 0-9 
-    │   └── Count1S              # Generates a control signal every 1 second
+    ├── Digital_Clock.vhdl          # Top Level Entity
+    │   ├── Count2.vhdl             # HR1 - Counts from 0-2 
+    │   ├── Count3.vhdl             # HR0 - Counts from 0-9 when HR1 is 0 or 1 and 0-3 when HR is 2 
+    │   ├── Count5.vhdl             # MIN1 - Counts from 0-5 
+    │   ├── Count9.vhdl             # MIN0 - Counts from 0-9 
+    │   ├── Count5S.vhdl            # SEC1 - Counts from 0-5 
+    │   ├── Count9S.vhdl            # SEC0 - Counts from 0-9 
+    │   ├── Count1S.vhdl            # Generates a control signal every 1 second
+    │   ├── Led_Input_Display.vhdl  # Ensures that an LED is switched on when a particular switch is toggled 
+    │   └── 7Segment.vhdl           # Controls digits on the seven segment displays
     └── ...
